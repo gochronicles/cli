@@ -35,7 +35,7 @@ brews:
   - # GitHub/GitLab repository to push the formula to
     tap:
       owner: gochronicles
-      name: homebrew-gc-cli
+      name: gc-cli
 
     # Template for the url which is determined by the given Token (github or gitlab)
     # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
@@ -46,10 +46,6 @@ brews:
     commit_author:
       name: gochronicles
       email: arun.kutty@outlook.com
-
-    # Folder inside the repository to put the formula.
-    # Default is the root folder.
-    folder: Formula
 
     # Caveats for the user of your binary.
     # Default is empty.
