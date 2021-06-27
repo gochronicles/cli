@@ -3,7 +3,7 @@
 project_name: autobots
 
 env_files:
-  github_token: /home/arunnkutty/.goreleaser/github_token
+  github_token: ~/.config/goreleaser/github_token
 
 before:
   hooks:
@@ -37,6 +37,7 @@ brews:
       owner: gochronicles
       name: homebrew-cli
 
+    name: autobots
     # Template for the url which is determined by the given Token (github or gitlab)
     # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     url_template: "https://github.com/gochronicles/cli/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
