@@ -8,3 +8,4 @@
 # Tests
 **/tmp/
 *.out
+dist/

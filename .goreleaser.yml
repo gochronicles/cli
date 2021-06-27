@@ -1,0 +1,95 @@
+# This is an example .goreleaser.yml file with some sane defaults.
+# Make sure to check the documentation at http://goreleaser.com
+project_name: autobots
+
+before:
+  hooks:
+    # You may remove this if you don't use go modules.
+    - go mod tidy
+
+builds:
+  - # Build macOS, Linux and Windows versions
+    main: ./cmd/autobots/main.go
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    targets:
+      - linux_amd64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+    ldflags:
+      - -s -w
+
+# .goreleaser.yml
+brews:
+  - # GitHub/GitLab repository to push the formula to
+    tap:
+      owner: autobots
+      name: homebrew-cli
+
+    # Template for the url which is determined by the given Token (github or gitlab)
+    # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    url_template: "https://github.com/gochronicles/gc-cli/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+
+    # Git author used to commit to the repository.
+    # Defaults are shown.
+    commit_author:
+      name: gochronicles
+      email: arun.kutty@outlook.com
+
+    # Folder inside the repository to put the formula.
+    # Default is the root folder.
+    folder: Formula
+
+    # Caveats for the user of your binary.
+    # Default is empty.
+    caveats: "A CLI to create Microservices Mono structure for Go, Python frameworks. Use autobots roll to create"
+
+    # Your app's description.
+    # Default is empty.
+    description: "A CLI to create Microservices Mono structure for Go, Python frameworks"
+
+    # SPDX identifier of your app's license.
+    # Default is empty.
+    license: "MIT"
+
+    # Packages your package depends on.
+    dependencies:
+      - name: git
+      - name: go
+
+archives:
+  - #Replacements for GOOS and GOARCH in the archive name
+    replacements:
+      darwin: macOS
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+
+    format_overrides:
+      -goos: windows
+       format: zip
+
+    files:
+      - LICENSE
+      - README.md
+
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - "^*.md:"
