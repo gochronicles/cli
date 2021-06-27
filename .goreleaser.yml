@@ -2,6 +2,9 @@
 # Make sure to check the documentation at http://goreleaser.com
 project_name: autobots
 
+env_files:
+  github_token: /home/arunnkutty/.goreleaser/github_token
+
 before:
   hooks:
     # You may remove this if you don't use go modules.
@@ -31,8 +34,8 @@ builds:
 brews:
   - # GitHub/GitLab repository to push the formula to
     tap:
-      owner: autobots
-      name: homebrew-cli
+      owner: gochronicles
+      name: homebrew-gc-cli
 
     # Template for the url which is determined by the given Token (github or gitlab)
     # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
