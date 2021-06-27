@@ -35,11 +35,11 @@ brews:
   - # GitHub/GitLab repository to push the formula to
     tap:
       owner: gochronicles
-      name: gc-cli
+      name: homebrew-cli
 
     # Template for the url which is determined by the given Token (github or gitlab)
     # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
-    url_template: "https://github.com/gochronicles/gc-cli/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    url_template: "https://github.com/gochronicles/cli/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
 
     homepage: https://github.com/gochronicles/gc-cli
 
