@@ -8,7 +8,7 @@ env_files:
 before:
   hooks:
     # You may remove this if you don't use go modules.
-    - go mod tidy
+    - go mod download
 
 builds:
   - # Build macOS, Linux and Windows versions
