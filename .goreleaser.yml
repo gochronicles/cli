@@ -35,7 +35,7 @@ brews:
   - # GitHub/GitLab repository to push the formula to
     tap:
       owner: gochronicles
-      name: homebrew-cli
+      name: cli
 
     name: autobots
     # Template for the url which is determined by the given Token (github or gitlab)
