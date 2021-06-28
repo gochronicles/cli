@@ -8,12 +8,13 @@
 
 ## ⚡️ Quick start
 
-First of all, [download](https://golang.org/dl/) and install **Go**. Version `1.16` or higher is required.
-
-Installation is done by using the [`go install`](https://golang.org/cmd/go/#hdr-Compile_and_install_packages_and_dependencies) command and rename installed binary in `$GOPATH/bin`:
+Installation is done by using [`brew install`] command :
 
 ```bash
-go install gochronicles/cmd/autobots
+brew tap gochronicles/cli https://github.com/gochronicles/cli
+```
+```bash
+brew install autobots
 ```
 
 Let's create a new project via **interactive console UI** (or **CUI** for short) in current folder:
