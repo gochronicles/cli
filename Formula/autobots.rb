@@ -12,18 +12,18 @@ class Autobots < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/gochronicles/cli/releases/download/v1.0.6/autobots_1.0.6_macOS_x86_64.tar.gz"
-      sha256 "fc8f148794fad7e4f22a524d2be887b23ec365633dfa6c31de5fe4a773358b08"
+      sha256 "c7af172e2f2197a8c81153031fe1bf873995a940cf53acea9f2256b503f60687"
     end
     if Hardware::CPU.arm?
       url "https://github.com/gochronicles/cli/releases/download/v1.0.6/autobots_1.0.6_macOS_arm64.tar.gz"
-      sha256 "cd63570ee9f9da92da5f5552db4ee9925d39e3d5807bf6158072032242e4d5b1"
+      sha256 "de58c59fe25b2714c6e03d87f95897cf7531a781995e53a204c3c69226c6aa8f"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/gochronicles/cli/releases/download/v1.0.6/autobots_1.0.6_Linux_x86_64.tar.gz"
-      sha256 "98cedb941946d332d43e831eb5dc16cf60b100fd6be638808fc32dcbe7556bae"
+      sha256 "3a458fa716c943e27595513620199fa2bc61ef2ea4b773b18d2741d9260793f8"
     end
   end
 
