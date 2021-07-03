@@ -5,7 +5,7 @@ import (
 )
 
 // CLIVersion version of Autobot CLI.
-const CLIVersion string = "1.0.1"
+const CLIVersion string = "1.0.7"
 const EMPTY = ""
 
 const FIBER_NEO4J_TEMPLATE string = "github.com/gochronicles/monorepo-fiber-neo4j.git"
