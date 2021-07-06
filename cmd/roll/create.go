@@ -5,10 +5,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/AlecAivazis/survey/v2"
-	"github.com/spf13/cobra"
 	"gochronicles/pkg/autobot"
 	"gochronicles/pkg/registry"
+
+	"github.com/AlecAivazis/survey/v2"
+	"github.com/spf13/cobra"
 )
 
 func init() {
@@ -66,15 +67,27 @@ func runCreateCmd(cmd *cobra.Command, args []string) error {
 
 		// Define variables for better display.
 
-		if strings.Contains(createAnswers.Backend, "fiber") {
-			backend = registry.FIBER_TEMPLATE
+		if strings.Contains(createAnswers.Backend, "fiber-neo4j") {
+			backend = registry.FIBER_NEO4J_TEMPLATE
 		}
 
+		if strings.Contains(createAnswers.Backend, "fastapi-postgres") {
+			backend = registry.FASTAPI_POSTGRES_TEMPLATE
+		}
+		if strings.Contains(createAnswers.Backend, "fastapi-neo4j") {
+			backend = registry.FASTAPI_NEO4J_TEMPLATE
+		}
 		switch createAnswers.Backend {
 
-		case "fiber":
-			backend = registry.FIBER_TEMPLATE
-			backendMessage = registry.FIBER_TEMPLATE_CREATION_SUCCESS
+		case "fiber-neo4j":
+			backend = registry.FIBER_NEO4J_TEMPLATE
+			backendMessage = registry.FIBER_NEO4J_TEMPLATE_CREATION_SUCCESS
+		case "fastapi-postgres":
+			backend = registry.FASTAPI_POSTGRES_TEMPLATE
+			backendMessage = registry.FASTAPI_POSTGRES_TEMPLATE_SUCCESS
+		case "fastapi-neo4j":
+			backend = registry.FASTAPI_NEO4J_TEMPLATE
+			backendMessage = registry.FASTAPI_NEO4J_TEMPLATE_SUCCESS
 
 		case "n/a":
 			backend = registry.EMPTY
