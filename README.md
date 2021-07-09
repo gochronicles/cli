@@ -22,9 +22,9 @@ brew install autobots
 2. **Linux**
 
 ```bash
-curl https://github.com/gochronicles/cli/releases/download/v1.0.6/autobots_1.0.6_Linux_x86_64.tar.gz -o autobots.tar.gz
-tar xvzf autobots.tar.gz
-sudo cp autobots /usr/bin/autobots
+sudo rm /usr/bin/autobots # removes existing installation
+wget https://github.com/gochronicles/cli/releases/download/v1.0.6/autobots_1.0.6_Linux_x86_64.tar.gz -O autobots.tar.gz # download latest binary from Github
+sudo tar --directory /usr/bin/ -xzf autobots.tar.gz && rm autobots.tar.gz # extract in /usr/bin/directory
 ```
 
 3. **Build from Source**
